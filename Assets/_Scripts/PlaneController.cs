@@ -4,6 +4,9 @@ using System.Collections;
 public class PlaneController : MonoBehaviour {
 	// PRIVATE INSTANCE VARIABLES
 	private Transform _transform;
+	private AudioSource[] _sounds;
+	private AudioSource _thunderSound;
+	private AudioSource _yaySound;
 
 	// PUBLIC INSTANCE VARIABLES (For Testing) ++++++++++++++++++++++++++++++++++
 	public GameController gameController;
@@ -12,6 +15,9 @@ public class PlaneController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this._transform = this.GetComponent<Transform> ();
+		this._sounds = this.GetComponents<AudioSource> ();
+		this._thunderSound = this._sounds [1];
+		this._yaySound = this._sounds [2];
 	}
 	
 	// Update is called once per frame
@@ -29,13 +35,13 @@ public class PlaneController : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		
 		if (other.gameObject.CompareTag ("Island")) {
-			Debug.Log ("Island Hit!");
 			this.gameController.ScoreValue += 100;
+			this._yaySound.Play ();
 		}
 
 		if (other.gameObject.CompareTag ("Cloud")) {
-			Debug.Log ("Cloud Hit!");
 			this.gameController.LivesValue -= 1;
+			this._thunderSound.Play ();
 		}
 
 	}
