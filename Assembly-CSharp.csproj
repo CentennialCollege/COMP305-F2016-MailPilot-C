@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F2E66122-2465-2084-6DF2-A8177A7AD43C}</ProjectGuid>
+    <ProjectGuid>{8A4A8EB5-A0F7-7FF5-40DC-8F807AB1B1A0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\CloudController.cs" />
+     <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\IslandController.cs" />
      <Compile Include="Assets\_Scripts\OceanController.cs" />
      <Compile Include="Assets\_Scripts\PlaneController.cs" />

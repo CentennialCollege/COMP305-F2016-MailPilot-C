@@ -5,6 +5,9 @@ public class PlaneController : MonoBehaviour {
 	// PRIVATE INSTANCE VARIABLES
 	private Transform _transform;
 
+	// PUBLIC INSTANCE VARIABLES (For Testing) ++++++++++++++++++++++++++++++++++
+	public GameController gameController;
+
 
 	// Use this for initialization
 	void Start () {
@@ -27,10 +30,12 @@ public class PlaneController : MonoBehaviour {
 		
 		if (other.gameObject.CompareTag ("Island")) {
 			Debug.Log ("Island Hit!");
+			this.gameController.ScoreValue += 100;
 		}
 
 		if (other.gameObject.CompareTag ("Cloud")) {
 			Debug.Log ("Cloud Hit!");
+			this.gameController.LivesValue -= 1;
 		}
 
 	}

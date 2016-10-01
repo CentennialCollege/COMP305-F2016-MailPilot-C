@@ -30,7 +30,6 @@ public class CloudController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this._transform = this.GetComponent<Transform> ();
-
 		this._reset ();
 	}
 
